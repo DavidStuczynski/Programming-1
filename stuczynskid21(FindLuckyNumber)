@@ -1,0 +1,40 @@
+// File Name: stuczynskid21.cpp
+// Written by: David Stuczynski
+// Description: Figures out your "lucky Number"
+// Challenges: i got confused on what exactly the assignment was asking for
+// Time Spent: 45 minutes
+// Given Input: (3 sets)         Expected Output: (3 corresponding sets)
+// --------------------          -------------------------
+// 1) Birthday: 10/22/1991
+// 2) Lucky Number: 905
+// 3) 
+// Revision History
+// Date:        Revised By:     Action:
+// ------------------------------------------------------------------
+// 09/29/15    (DS)  (what you did to the code)
+
+// the preprocessor command; includes input library to take in values from variables and put the out.
+#include <iostream>
+
+//iostream library is located in a namespace called std.
+using namespace std;
+
+//the function will return an integer value while verifying whether program was completed.
+int main ( ) 
+{
+	//Declares integer variables.
+	int lucky, month, day, year;
+	
+	//Assign month, day, and year as my own birthday.
+	month = 10;
+	day = 22;
+	year = 1991;
+	
+	//Calculate my lucky number.
+	lucky = (year * month) / day;
+	
+	//Declares my lucky number based on my birthday variables put into my "lucky" equation.
+	cout << """My lucky number is: "<< lucky << endl;
+	
+	return 0;
+}
