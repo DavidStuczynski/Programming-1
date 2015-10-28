@@ -1,0 +1,74 @@
+// File Name: Practice43.cpp
+// Written by: David Stuczynski
+// Description: Calculator
+// Challenges:
+// Time Spent:
+// Given Input: (3 sets)         Expected Output: (3 corresponding sets)
+// --------------------          -------------------------
+// 1)
+// 2) 
+// 3) 
+// Revision History
+// Date:        Revised By:     Action:
+// ------------------------------------------------------------------
+// 09/29/15    (DS)  (what you did to the code)
+
+// the preprocessor command; includes input library to take in values from variables and put the out.
+#include <iostream>
+
+#include <cmath>
+
+//iostream library is located in a namespace called std.
+using namespace std;
+
+//the function will return an integer value while verifying whether program was completed.
+int main ( ) 
+{
+	double value1=0.00, value2=0.00, result=0.00;
+	char operation;
+	bool flag = 0;
+	
+	cout << "Enter the operation you wish to execute (+,-,*,/): ";
+	cin >> operation;
+	
+	cout << "\n\tEnter your first value with two decimal places: ";
+	cin >> value1;
+	
+	cout << "\n\tEnter your second value with two decimal places: ";
+	cin >> value2;
+	
+	cout << "\n" << endl;
+	
+	switch(operation)
+	{
+		case '+':
+			flag = 1;
+			result = value1 + value2;
+			break;
+		
+		case '-':
+			flag = 1;
+			result = value1 - value2;
+			break;	
+		
+		case '*':
+			flag = 1;
+			result = value1 * value2;
+			break;
+			
+		case '/':
+			if (value2 != 0)
+				flag = 1;
+				result = value1/value2;
+			break;
+			
+	}
+	
+	if(flag != 0)
+		cout << value1 << " " << operation << " " << value2 << " equals " << result << endl;
+	else
+		cout << value1 << " " << operation << " " << value2 << " equals Undefined " << endl;
+	
+		
+	return 0;
+}
