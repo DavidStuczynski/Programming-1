@@ -1,0 +1,79 @@
+// File Name: stuczynskid31.cpp
+// Written by: David Stuczynski
+// Description: Grade Calculator
+// Challenges: figuring out the rounding methods
+// Time Spent: 2 hours
+// Given Input: (3 sets)         Expected Output: (3 corresponding sets)
+// --------------------          -------------------------
+// 1) 89.6784				Percentage: 89.68%	Grade: A	Points: 4.00
+// 2) 84.4555				Percentage: 84.46%	Grade: B	Points: 3.00
+// 3) 79.3943				Percentage: 79.39%	Grade: C	Points: 2.00
+// Revision History
+// Date:        Revised By:     Action:
+// ------------------------------------------------------------------
+// 10/05/15    (DS)  Wrote initial coding for program.
+// 10/13/15    (DS)  Added comments to the program and tested it.
+
+// the preprocessor command; includes input library to take in values from variables and put the out.
+#include <iostream>
+
+#include <iomanip>
+
+#include <cmath>
+
+//iostream library is located in a namespace called std.
+using namespace std;
+
+//the function will return an integer value while verifying whether program was completed.
+int main ( ) 
+{
+	//Declares variable as double.
+	double percentage = 0.00;
+	
+	//Displays output string.
+	cout << "Welcome to your grading system for your Programming 1 course!" << endl;
+	
+	//Displays output string and recieves the input.
+	cout << "\nEnter a numeric grade value with two decimal places: " << endl;
+	cin >> percentage;
+	
+	//Sets the precision which displays the values to two decimal places.
+	cout << setiosflags(ios::fixed) << setiosflags(ios::showpoint) << setprecision(2);
+	
+	//This is the If statement that determines the result and displays the output.
+	//This also takes the input and rounds it appropriately.
+	if (round(percentage) < 0)
+	{
+		cout << "\nThe grade is negative and invalid . \nPlease try again with a valid numeric grade value." << endl;
+	}
+	else if (round(percentage) > 100)
+	{
+		cout << "\nThe grade is too high and invalid. \nPlease try again with a valid numeric grade value." << endl;
+	}
+	else if (round(percentage) >= 90)
+	{
+		cout << "\n\tPercentage: " << percentage << "%\t\tGrade: A\tPoints: 4.00" << endl;
+	}
+	
+	else if (round(percentage) >= 80)
+	{
+		cout << "\n\tPercentage: " << percentage << "%\t\tGrade: B\tPoints: 3.00" << endl;
+	}
+	
+	else if (round(percentage) >= 70)
+	{
+		cout << "\n\tPercentage: " << percentage << "%\t\tGrade: C\tPoints: 2.00" << endl;
+	}
+	
+	else if (round(percentage) >= 60)
+	{
+		cout << "\n\tPercentage: " << percentage << "%\t\tGrade: D\tPoints: 1.00" << endl;
+	}
+	
+	else
+	{
+		cout << "\n\tPercentage: " << percentage << "%\t\tGrade: F\tPoints: 0.00" << endl;
+	}
+	
+	return 0;
+}
