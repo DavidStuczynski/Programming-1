@@ -1,0 +1,51 @@
+// File Name: stuczynskid22.cpp
+// Written by: David Stuczynski
+// Description: Calculate the Area of a Triangle
+// Challenges: ran into some errors with semicolons 
+// Time Spent: 1 hour
+// Given Input: (3 sets)         Expected Output: (3 corresponding sets)
+// --------------------          -------------------------
+// 1) base:	17.5	height: 6.1		Area: 53.375
+// 2) base:	15.5	height: 4.1		Area: 31.775
+// 3) base:	13.5	height: 13.5	Area: 91.125
+// Revision History
+// Date:        Revised By:     Action:
+// ------------------------------------------------------------------
+// 09/29/15    (DS)  (what you did to the code)
+
+// the preprocessor command; includes input library to take in values from variables and put the out.
+#include <iostream>
+
+//iostream library is located in a namespace called std.
+using namespace std;
+
+//the function will return an integer value while verifying whether program was completed.
+int main ( ) 
+{
+
+	//Set both variable's and the result's datatypes to double. 
+	double base, area, height;
+	
+	//Declare the constant as "half" and set it's value with the double datatype.
+	const double half = .5;
+	
+	//Displays an output using the insertion symbol, asking for an input.
+	cout << "Enter the base of the triangle: ";
+	//The input value recieved from user is stored in the variable "base".
+	cin >> base;
+	
+	//Displays an output using the insertion symbol, asking for an input.
+	cout << "\nEnter the height of the triangle: ";
+	//The input value recieved from user is stored in the variable "height".
+	cin >> height;
+	
+	//Calculates the value of the area by multiplying the constant "half" by both variables "base" and "height".
+	//Area = (1/2)(Base)(Height)
+	area = half * base * height;
+	
+	//Takes the value from both variables and the result of the equation.
+	//Displays a message displaying the variables chosen along with the result of the area of the triangle.
+	cout << "The area of a triangle with base " << base << " and height " << height << " is " << area << endl;
+	
+	return 0;
+}
