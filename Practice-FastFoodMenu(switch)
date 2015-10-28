@@ -1,0 +1,67 @@
+// File Name: Practice42.cpp
+// Written by: David Stuczynski
+// Description: Fast Food Menu (switch)
+// Challenges:
+// Time Spent:
+// Given Input: (3 sets)         Expected Output: (3 corresponding sets)
+// --------------------          -------------------------
+// 1)
+// 2) 
+// 3) 
+// Revision History
+// Date:        Revised By:     Action:
+// ------------------------------------------------------------------
+// 09/29/15    (DS)  (what you did to the code)
+
+// the preprocessor command; includes input library to take in values from variables and put the out.
+#include <iostream>
+
+//iostream library is located in a namespace called std.
+using namespace std;
+
+//the function will return an integer value while verifying whether program was completed.
+int main ( ) 
+{
+	int menu;
+	
+	cout << "Welcome, would you like: " << endl;
+	cout << "\n1.) Hamburger" << endl;
+	cout << "\n2.) Hot Dog" << endl;
+	cout << "\n3.) French Fries" << endl;
+	cout << "\n4.) Sausage" << endl;
+	
+	cout << "Please choose the number that represents the food you would like: " << endl;
+	cin >> menu;
+	
+	switch(menu);
+	{
+		case 1:
+			cout << "Would you like some ketchup with your hamburger?" << endl;
+			break;
+		case 2:
+			cout << "Would you like a wheat bun with your hotdog?" << endl;
+			break;
+		case 3:
+			cout << "Would you like some ketchup on your french fries?" << endl;
+			break;
+		case 4:
+			cout << "You need to chose a number that represents food!!" << endl;
+			break;
+	}
+	//if (menu == 1)
+	//cout << "Would you like some ketchup with your hamburger?" << endl;
+	
+	//else if (menu == 2)
+	//cout << "Would you like a wheat bun with your hotdog?" << endl;
+	
+	//else if (menu == 3)
+	//cout << "Would you like some ketchup on your french fries?" << endl;
+	
+	//else if (menu == 4)
+	//cout << "Would you like some mustard with your sausage?" << endl;
+	
+	//else
+	//cout << "You need to chose a number that represents food!!" << endl;
+	
+	return 0;
+}
