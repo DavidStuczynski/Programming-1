@@ -1,0 +1,75 @@
+//the preprocessor command; includes input library to take in values from variables and put the out.
+#include <iostream>
+//these enables the values to show precision and round them.
+#include <iomanip>
+#include <cmath>
+
+//iostream library is located in a namespace called std.
+using namespace std;
+
+//the function will return an integer value while verifying whether program was completed.
+int main()
+{
+	//Declare variables:
+	//the value of years is set to integer and 1 year is the minimum value for calculation.
+	int years = 1;
+	//the value of year is set to integer and will be used in calculations
+	int year = 1;
+	//the value of principal is set to double.
+	double principal = 1.00;
+	//the value of interest rate is set to double. 
+	double interestRate = 0.05;
+	//the value of future value is set to double and will display the total balance at the desired precision point.
+	double futureValue = 0.00;
+	//the value of months is set to integer and is a constant in the calculations.
+	int months = 12;
+	
+	//displays an output the greets the user.
+	cout << "Welcome to your bank's total balance calculator:" << endl;
+	//displays a line that seperates the greeting from the questions below.
+	cout << "_________________________________________________\n" << endl;
+	
+	//displays the question.
+	cout << "How many years?: ";
+	//recieves and stores input value.
+	cin >> years;
+	//makes a gap that seperates this question from the next.
+	cout << endl;
+	
+	//displays the question.
+	cout << "What is the principal?: ";
+	//recieves and stores input value.
+	cin >> principal;
+	//makes a gap that seperates this question from the next.
+	cout << endl;
+	
+	//displays the question.
+	cout << "What is the interest rate? (in decimal form): ";
+	//recieves and stores input value.
+	cin >> interestRate;
+	//makes a gap that seperates this question from the result.
+	cout << endl;
+	
+	//for statement initializes the statement. 
+		//the it puts it into the valid expression. (nonzero)
+			// and then is executed at the end of the loop before being reevaluated.
+	for (year = 1; year < years+1; year++)
+	{
+		
+		//this is the calculation that finds the total balance after each year. 
+		futureValue = principal * pow(1.0+(interestRate/months),months*year);
+		
+		//sets the precision which displays the result's values to two decimal places.
+		cout << setiosflags(ios::fixed) << setiosflags(ios::showpoint) << setprecision(2);
+		
+		//displays the list of results to the user of every year leading up to the year inputed.
+		cout << "       Year " << setw(2) << year << "  Balance = " << futureValue << endl;
+	}
+	
+	//displays a final message to user.
+	cout << "\n These are the expected total balances at the end of each year." << endl;
+	cout << endl;
+	cout << "\n Thank you for using the total balance calculator!" << endl;
+	
+	return 0;
+}
