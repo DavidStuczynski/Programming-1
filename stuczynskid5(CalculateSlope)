@@ -1,0 +1,113 @@
+ //the preprocessor command; includes input library to take in values from variables and put the out.
+ #include <iostream> 
+ //the preprocessor command; enables the values to show precision.
+ #include <iomanip> 
+  
+ //iostream library is located in a namespace called std.
+ using namespace std; 
+ 
+ //Part A:
+ //function prototype that sets parameters and doesn't return a value.
+ void linear(double, double, double, double, double&, double&); 
+ 
+ 
+ //the function will return an integer value.
+ int main() 
+ { 
+ 	//declared and initialized 4 input variables. 
+ 	double x1 = 0.00; 
+ 	double y1 = 0.00; 
+ 	double x2 = 0.00; 
+ 	double y2 = 0.00; 
+ 	
+ 	//declared variable for continuation loop. 
+ 	char exit; 
+
+ 	//declared and intialized 2 output parameters.
+ 	double slope; 
+ 	double intercept; 
+ 	 
+ 	//beginning of the do/while loop.
+ 	do 
+ 	{ 
+ 		   
+ 		//displays the output that lets user choose whether to continue the program or exit.
+		cout << "Would you like to continue?(y/n):"; 
+ 		//recieves response and inputs it to the variable exit. 
+ 		cin >> exit; 
+ 		 
+ 		//this is the if statement that recieves the input and breaks if user chooses 'n' or 'N'.
+ 		if(exit == 'n' || exit == 'N') 
+ 		{ 
+ 			break; 
+ 		} 
+
+
+ 		//displays string that asks user for inputs. 
+ 		cout << "\nEnter the value of X and then Y for point 1: "; 
+ 		//receives both inputs and stores them. 
+ 		cin >> x1 >> y1; 
+ 		 
+ 		//displays string that asks user for inputs. 
+ 		cout << "\nEnter the value of X and then Y for point 2: "; 
+ 		//receives both inputs and stores them. 
+ 		cin >> x2 >>y2; 
+ 		 
+ 		  
+ 		//beginning of "if-else" statement that tests the inputs to determine the resulting output. 
+		if (x1 == x2 && y1 == y2) 
+ 			{ 
+ 				//displays a gap to seperate inputs from result string.
+				cout << "\n";
+				//displays the response appropriate for the values recieved.
+ 				cout << "\n\tThe points you entered are the same. Continue to try again." << endl;	 
+ 				//displays a line then a gap for seperation before continuation output displayed.
+ 				cout << "________________________________________________________________________________" << endl; 
+ 				cout << "\n"; 
+ 			} 
+ 		//continues the "if-else" statement by testing the inputs if the previous statement was false. 
+ 		else if(x1 == x2) 
+ 			{ 
+ 				//displays a gap to seperate inputs from result string.
+				cout << "\n";
+				//displays the response appropriate for the values recieved. 
+ 				cout << "\n\tThe points you entered define a vertical line: x = " << x1 << endl; 
+ 				//displays a line then a gap for seperation before continuation output displayed.
+ 				cout << "________________________________________________________________________________" << endl; 
+ 				cout << "\n";
+ 			} 
+ 		//continues the "if-else" statement by calculating the inputs if the previous statements were false.	 
+ 		else 
+ 			{ 
+ 				//the linear function is called and the input parameters are used to determine the slope and the intercept. 
+ 				linear(x1, y1, x2, y2, slope, intercept); 
+ 				 
+ 				//displays a gap to seperate inputs from result string.
+				cout << "\n";
+				//displays the string explaining the result of the linear function. 
+ 				cout << "\n\tThe points you entered define the function: y = " << slope << "x + " << intercept << endl; 
+ 				//displays a line then a gap for seperation before continuation output displayed.
+ 				cout << "________________________________________________________________________________" << endl; 
+ 				cout << "\n";
+ 			} 
+ 	//the end of the do/while loop which allows the loop to continue as long as the user doesn't input 'n' or 'N'.		 
+ 	}while(exit != 'n' || exit!='N' ); 
+
+ 	return 0;		 
+ } 
+ 
+ 
+ //Part B:
+ //function header that sets parameters and doesn't return a value.
+ void linear(double x1, double y1, double x2, double y2, double& slope, double& intercept) 
+ { 
+ 	
+ 	//this is the calculation to determine the slope from the input parameters and updates the output parameter "slope".
+ 	slope = (y2-y1)/(x2-x1); 
+ 	 
+ 	//this is the calculation to determine the intercept from the input parameters and updates the output parameter "intercept".  
+ 	intercept = (y1-(slope * x1)); 
+ 	 
+ 	//returns no value. 
+ 	return; 
+ } 
